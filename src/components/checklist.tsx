@@ -1,5 +1,5 @@
 import React from 'react'
-import { ChecklistItem } from '@/types/database'
+import { ChecklistItem } from '../types/database'
 
 interface ChecklistProps {
   items: ChecklistItem[]

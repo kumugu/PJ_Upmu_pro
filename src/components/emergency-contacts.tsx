@@ -1,5 +1,5 @@
 import React from 'react'
-import { EmergencyContact } from '@/types/database'
+import { EmergencyContact } from '../types/database'
 
 interface EmergencyContactsProps {
   contacts: EmergencyContact[]

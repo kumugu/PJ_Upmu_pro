@@ -1,9 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { Checklist } from './checklist'
-import { EmergencyContacts } from '@/components/emergency-contacts'
+import { EmergencyContacts } from './emergency-contacts'
 import { Button } from './ui/button'
-import { WorkType } from '@/types/database'
+import { WorkType } from '../types/database'
 
 export function WorkSessionManager({ workType }: { workType: WorkType }) {
   const [currentStep, setCurrentStep] = useState(0)

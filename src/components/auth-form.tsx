@@ -3,24 +3,41 @@ import React, { useState } from 'react'
 
 interface AuthFormProps {
   type: 'login' | 'signup'
-  onSubmit: (email: string, password: string) => void
+  onSubmit: (email: string, password: string) => Promise<void>
   error?: string
   onSignupClick?: () => void
   onLoginClick?: () => void
 }
 
-export const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, error, onSignupClick, onLoginClick }) => {
+export const AuthForm: React.FC<AuthFormProps> = ({
+  type,
+  onSubmit,
+  error,
+  onSignupClick,
+  onLoginClick,
+}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    onSubmit(email, password)
+    setLoading(true)
+    try {
+      await onSubmit(email, password)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md p-8 bg-white rounded shadow-md">
-      <h2 className="text-2xl font-semibold mb-6">{type === 'login' ? '로그인' : '회원가입'}</h2>
+    <form
+      onSubmit={handleSubmit}
+      className="w-full max-w-md p-8 bg-white rounded shadow-md"
+    >
+      <h2 className="text-2xl font-semibold mb-6">
+        {type === 'login' ? '로그인' : '회원가입'}
+      </h2>
 
       {error && <p className="mb-4 text-red-600">{error}</p>}
 
@@ -32,6 +49,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, error, onSig
           onChange={e => setEmail(e.target.value)}
           required
           className="mt-1 w-full border rounded px-3 py-2"
+          autoComplete="email"
         />
       </label>
 
@@ -43,14 +61,20 @@ export const AuthForm: React.FC<AuthFormProps> = ({ type, onSubmit, error, onSig
           onChange={e => setPassword(e.target.value)}
           required
           className="mt-1 w-full border rounded px-3 py-2"
+          autoComplete="current-password"
         />
       </label>
 
       <button
         type="submit"
         className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition"
+        disabled={loading}
       >
-        {type === 'login' ? '로그인' : '회원가입'}
+        {loading
+          ? '처리중...'
+          : type === 'login'
+          ? '로그인'
+          : '회원가입'}
       </button>
 
       {type === 'login' && onSignupClick && (

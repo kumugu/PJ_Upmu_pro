@@ -1,6 +1,6 @@
 'use client'
-import { Calendar } from '@/components/ui/calendar'
-import { WorkType } from '@/types/database'
+import { Calendar } from "./ui/calendar"
+import { WorkType } from "../types/database"
 
 interface WorkSession {
   start_time: string
