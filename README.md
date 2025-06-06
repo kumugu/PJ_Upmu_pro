@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 업무 관리 시스템 (Upmu)
 
-## Getting Started
+현대적이고 직관적인 UI/UX를 갖춘 업무 일정 및 급여 관리 시스템
 
-First, run the development server:
+## 주요 기능
+
+- **실시간 대시보드**  
+  진행 중인 업무, 근무 일수, 급여 예상액 등을 한눈에 확인
+- **글래스모피즘 디자인**  
+  투명한 레이어와 부드러운 그림자 효과로 현대적인 UI 구현
+- **다크/라이트 모드**  
+  사용자 선호에 따라 테마 전환 가능
+- **PWA 지원**  
+  모바일 및 데스크톱에서 앱처럼 설치/사용 가능
+- **Supabase 연동**  
+  실시간 데이터 동기화 및 안정적인 백엔드 서비스
+
+## 기술 스택
+
+**Frontend**  
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)  
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)  
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)  
+
+**Backend**  
+![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)  
+
+**Deployment**  
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)  
+
+## 설치 및 실행
+
+1. 저장소 복제
+
+```bash
+git clone https://github.com/your-username/workflow-system.git
+1. 의존성 설치
+
+```bash
+npm install
+```
+
+2. 환경변수 설정 (.env.local)
+
+```
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+3. 개발 서버 실행
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 스크린샷
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| 다크 모드 대시보드                            | 라이트 모드 대시보드                             |
+| --------------------------------------------- | ------------------------------------------------ |
+| ![다크 모드](/screenshots/dark-dashboard.png) | ![라이트 모드](/screenshots/light-dashboard.png) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## 기여하기
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. 저장소를 포크(Fork)
+2. 기능 브랜치 생성
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git checkout -b feature/your-feature
+```
 
-## Deploy on Vercel
+3. 변경사항 커밋
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+git commit -m 'Add some feature'
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. 브랜치 푸시
+
+```bash
+git push origin feature/your-feature
+```
+
+5. 풀 리퀘스트(Pull Request) 생성
