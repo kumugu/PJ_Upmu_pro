@@ -48,7 +48,7 @@ export function Sidebar() {
       )}
 
       <aside className={`
-        fixed inset-y-0 left-0 z-30 
+        fixed inset-y-0 left-0 z-50 h-screen 
         ${isCollapsed ? 'w-20' : 'w-72'} 
         ${isDark 
           ? 'bg-gray-800 border-gray-700' 
