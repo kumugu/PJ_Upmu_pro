@@ -1,52 +1,55 @@
 'use client'
 import React from "react"
+import { Sidebar } from "@/src/components/sidebar"
 
-// 예시: Sidebar 컴포넌트 (간단 Tailwind 적용)
-export function Sidebar() {
-  return (
-    <aside className="fixed inset-y-0 left-0 w-64 bg-white border-r shadow-lg hidden lg:block z-20">
-      <div className="p-6 font-bold text-xl">업무 관리</div>
-      <nav className="mt-8 flex flex-col gap-2">
-        <a href="/dashboard" className="px-6 py-2 hover:bg-blue-50 rounded">대시보드</a>
-        <a href="/dashboard/schedule" className="px-6 py-2 hover:bg-blue-50 rounded">업무 스케줄</a>
-        <a href="/dashboard/work" className="px-6 py-2 hover:bg-blue-50 rounded">업무 시작</a>
-        <a href="/dashboard/history" className="px-6 py-2 hover:bg-blue-50 rounded">업무 내역</a>
-        <a href="/dashboard/salary" className="px-6 py-2 hover:bg-blue-50 rounded">급여 내역</a>
-        <a href="/dashboard/settings" className="px-6 py-2 hover:bg-blue-50 rounded">설정</a>
-        <a href="/logout" className="px-6 py-2 text-red-500 hover:bg-red-50 rounded">로그아웃</a>
-      </nav>
-    </aside>
-  )
-}
-
-// 예시: DashboardHeader 컴포넌트 (간단 Tailwind 적용)
-export function DashboardHeader() {
-  return (
-    <header className="sticky top-0 z-10 bg-white border-b px-4 py-3 flex items-center justify-between">
-      <h1 className="text-xl font-bold">대시보드</h1>
-      {/* 필요시 사용자 정보/버튼 등 추가 */}
-    </header>
-  )
-}
-
-// useTheme 훅 예시 (다크모드 토글)
-export function useTheme() {
-  // 실제로는 context나 localStorage 연동 필요
-  return { theme: 'light' }
-}
-
-export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const { theme } = useTheme()
-
-  return (
-    <div className={`min-h-screen ${theme === 'dark' ? 'bg-gray-900 text-white' : 'bg-gray-50 text-gray-900'}`}>
-      <Sidebar />
-      <div className="lg:pl-64">
-        <DashboardHeader />
-        <main className="py-10">
-          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
-        </main>
-      </div>
-    </div>
-  )
+export default function DashboardLayout({
+    children,
+}: {
+    children: React.ReactNode
+}) {
+    return (
+        <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-synerque-dark dark:to-synerque-base">
+            <Sidebar />
+            
+            {/* 메인 콘텐츠 영역 */}
+            <div className="lg:pl-72 transition-all duration-300">
+                {/* 헤더 */}
+                <header className="sticky top-0 z-30 bg-white/80 dark:bg-synerque-dark/80 backdrop-blur-xl border-b border-gray-200 dark:border-synerque-base px-6 py-4">
+                    <div className="flex items-center justify-between">
+                        <div>
+                            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
+                                대시보드
+                            </h1>
+                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                                업무 현황을 한눈에 확인하세요
+                            </p>
+                        </div>
+                        
+                        {/* 헤더 액션 */}
+                        <div className="flex items-center gap-4">
+                            {/* 알림 버튼 */}
+                            <button className="relative p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-synerque-hover rounded-xl transition-colors">
+                                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-5 5h5m-5-5V7a4 4 0 00-8 0v10h8z" />
+                                </svg>
+                                <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                            </button>
+                            
+                            {/* 프로필 버튼 */}
+                            <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer hover:scale-105 transition-transform">
+                                <span className="text-white font-bold text-sm">👤</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                
+                {/* 메인 콘텐츠 */}
+                <main className="p-6">
+                    <div className="max-w-7xl mx-auto">
+                        {children}
+                    </div>
+                </main>
+            </div>
+        </div>
+    )
 }
