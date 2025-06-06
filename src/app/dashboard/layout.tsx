@@ -19,7 +19,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
         {/* 헤더 */}
         <header className="sticky top-0 z-30 backdrop-blur-xl border-b px-6 py-4 bg-[oklch(var(--background))]/80 border-[oklch(var(--border))]">
           <div className="flex items-center justify-between">
-            <div>
+            <div className="text-center w-full">
               <h1 className="text-xl font-semibold text-[oklch(var(--foreground))]">
                 WorkSpace 대시보드
               </h1>
@@ -27,7 +27,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 업무 관리 시스템
               </p>
             </div>
-            <ThemeToggleButton />
+            <ThemeToggleButton /> {/* 나중에 setting으로 갈거임임 */}
           </div>
         </header>
 
