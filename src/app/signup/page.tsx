@@ -1,7 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { createClient } from '@/src/lib/supabase/client'
+import { createClient } from "@/src/lib/supabase/client"
 import { AuthForm } from '@/src/components/auth-form'
 
 export default function SignupPage() {
