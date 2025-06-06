@@ -33,7 +33,7 @@
 1. 저장소 복제
 
 ```bash
-git clone https://github.com/your-username/workflow-system.git
+git clone https://github.com/kumugu/PJ_Upmu_pro.git
 ```
 2. 의존성 설치
 
@@ -44,8 +44,8 @@ npm install
 3. 환경변수 설정 (.env.local)
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+NEXT_PUBLIC_SUPABASE_URL=https://cnrnavokrlhxcztfyisr.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNucm5hdm9rcmxoeGN6dGZ5aXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkwMTE5NDMsImV4cCI6MjA2NDU4Nzk0M30.cscNr9PPH2itdrNZ2Xp0V4UmVGUvEoHix_npYXr7KnU
 ```
 
 4. 개발 서버 실행
