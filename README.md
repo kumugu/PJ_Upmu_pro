@@ -34,20 +34,21 @@
 
 ```bash
 git clone https://github.com/your-username/workflow-system.git
-1. 의존성 설치
+```
+2. 의존성 설치
 
 ```bash
 npm install
 ```
 
-2. 환경변수 설정 (.env.local)
+3. 환경변수 설정 (.env.local)
 
 ```
 NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 
-3. 개발 서버 실행
+4. 개발 서버 실행
 
 ```bash
 npm run dev
