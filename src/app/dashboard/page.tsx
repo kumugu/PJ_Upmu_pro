@@ -8,7 +8,7 @@ export default async function DashboardPage() {
     <div className="space-y-8 animate-fade-in">
       {/* 환영 섹션 */}
       <div className="relative overflow-hidden">
-        <div className="backdrop-blur-xl bg-white/10 dark:bg-synerque-base/20 border border-white/20 dark:border-synerque-base/50 rounded-3xl p-8 shadow-xl">
+        <div className="backdrop-blur-xl bg-white/10 dark:bg-gray-800/20 border border-gray-200 dark:border-gray-700 rounded-3xl p-8 shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-3xl"></div>
           <div className="relative flex items-center justify-between">
             <div>
@@ -116,7 +116,7 @@ function StatsCard({ title, value, subtitle, change, icon, color }: StatsCardPro
     <div className="group relative">
       <div className={`absolute -inset-0.5 bg-gradient-to-r ${colorVariants[color]} rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-300`}></div>
       
-      <div className="relative backdrop-blur-xl bg-white/80 dark:bg-synerque-base/80 border border-white/20 dark:border-synerque-base/50 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+      <div className="relative backdrop-blur-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
         <div className="flex items-center justify-between">
           <div className="flex-1">
             <p className="text-sm font-medium text-gray-600 dark:text-gray-400 uppercase tracking-wide">
@@ -158,12 +158,12 @@ function RecentActivity() {
   ]
 
   return (
-    <div className="backdrop-blur-xl bg-white/80 dark:bg-synerque-base/80 border border-white/20 dark:border-synerque-base/50 rounded-2xl p-6 shadow-xl">
+    <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl">
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">오늘의 활동</h3>
       <div className="space-y-4">
         {activities.map((activity, index) => (
-          <div key={index} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-synerque-hover/50 transition-colors">
-            <div className="w-12 h-12 bg-gray-100 dark:bg-synerque-hover rounded-xl flex items-center justify-center">
+          <div key={index} className="flex items-center gap-4 p-3 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+            <div className="w-12 h-12 bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center">
               <span className="text-sm font-bold text-gray-600 dark:text-gray-300">{activity.time}</span>
             </div>
             <div className="flex-1">
@@ -197,7 +197,7 @@ function QuickActions() {
   ]
 
   return (
-    <div className="backdrop-blur-xl bg-white/80 dark:bg-synerque-base/80 border border-white/20 dark:border-synerque-base/50 rounded-2xl p-6 shadow-xl">
+    <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl">
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">빠른 액션</h3>
       <div className="grid grid-cols-2 gap-3">
         {actions.map((action, index) => (
@@ -229,7 +229,7 @@ function ProjectProgress() {
   ]
 
   return (
-    <div className="backdrop-blur-xl bg-white/80 dark:bg-synerque-base/80 border border-white/20 dark:border-synerque-base/50 rounded-2xl p-6 shadow-xl">
+    <div className="backdrop-blur-xl bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 rounded-2xl p-6 shadow-xl">
       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">프로젝트 진행 상황</h3>
       <div className="space-y-6">
         {projects.map((project, index) => (
@@ -238,7 +238,7 @@ function ProjectProgress() {
               <h4 className="font-medium text-gray-900 dark:text-white">{project.name}</h4>
               <span className="text-sm font-bold text-gray-600 dark:text-gray-300">{project.progress}%</span>
             </div>
-            <div className="w-full bg-gray-200 dark:bg-synerque-hover rounded-full h-3">
+            <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3">
               <div 
                 className={`h-3 rounded-full transition-all duration-1000 ease-out ${
                   project.color === 'blue' ? 'bg-gradient-to-r from-blue-500 to-blue-600' :

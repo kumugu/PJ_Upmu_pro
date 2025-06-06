@@ -41,6 +41,11 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Synerque 커스텀 색상 추가 */
+  --color-synerque-dark: var(--synerque-dark);
+  --color-synerque-base: var(--synerque-base);
+  --color-synerque-hover: var(--synerque-hover);
 }
 
 :root {
@@ -76,6 +81,11 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  
+  /* Synerque 라이트 모드 색상 */
+  --synerque-dark: #1a1a2e;
+  --synerque-base: #16213e;
+  --synerque-hover: #0f172a;
 }
 
 .dark {
@@ -110,13 +120,62 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+  
+  /* Synerque 다크 모드 색상 */
+  --synerque-dark: #0f0f23;
+  --synerque-base: #1a1a2e;
+  --synerque-hover: #16213e;
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  :root {
+    color-scheme: light;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
   }
+
+  .dark {
+    color-scheme: dark;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  html {
+    @apply h-full scroll-smooth;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply h-full bg-background text-foreground;
   }
+}
+
+/* 커스텀 애니메이션 */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
 }
