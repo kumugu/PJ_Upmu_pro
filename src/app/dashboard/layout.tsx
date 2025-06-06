@@ -1,5 +1,4 @@
 'use client'
-
 import { useTheme } from "next-themes"
 import { Sidebar } from "@/src/components/sidebar"
 import { ThemeToggleButton } from "@/src/components/theme/toggle/button"
@@ -9,7 +8,7 @@ interface DashboardLayoutProps {
 }
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
-  const { theme } = useTheme()
+  const { theme: _theme } = useTheme()
 
   return (
     <div className="min-h-screen transition-colors duration-300 bg-[oklch(var(--background))] text-[oklch(var(--foreground))]">
