@@ -1,3 +1,12 @@
+export interface Database {
+    WorkCategory: WorkCategory;
+    WorkType: WorkType;
+    WorkSession: WorkSession;
+    Salary: Salary;
+    UserSettings: UserSettings;
+}
+
+
 export interface WorkCategory {
     id: string;
     user_id: string;

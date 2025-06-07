@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Upmu",
-  description: "퇴근하자자",
+  description: "퇴근하자",
   manifest: "/manifest.json",
   icons: {
     icon: "/favicon.ico",
