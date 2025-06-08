@@ -1,5 +1,5 @@
 'use client'
-import { useAuth } from '@/src/hooks/useAuth'
+import { useAuth } from '@/src/lib/hooks/useAuth'
 import { AuthLoading } from './AuthLoading'
 import { usePathname } from 'next/navigation'
 

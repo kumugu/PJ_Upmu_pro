@@ -1,7 +1,7 @@
 'use client'
 
 import { ReactNode } from 'react'
-import { useAuth } from '@/src/hooks/useAuth'
+import { useAuth } from '@/src/lib/hooks/useAuth'
 import { Button } from './Button'
 import { LogOut, Settings, Home, BarChart3, Clock, UserPlus } from 'lucide-react'
 import Link from 'next/link'

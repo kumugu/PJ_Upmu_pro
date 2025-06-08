@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { createClient } from '../lib/supabase/client'
+import { createClient } from '../supabase/client'
 import { WorkCategory, CategoryFormData } from '../types/work-settings'
 import { useAuth } from './useAuth'
 

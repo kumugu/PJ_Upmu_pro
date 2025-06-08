@@ -1,4 +1,5 @@
 import { ThemeProvider } from 'next-themes'
+import { ToastProvider } from '@/compo'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'

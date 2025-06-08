@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd'
-import { ChecklistItem, ChecklistItemFormData } from '../../types/work-settings'
+import { ChecklistItem, ChecklistItemFormData } from '../../lib/types/work-settings'
 import { Button } from '../ui/Button'
 import { Input } from '../ui/Input'
 import { Card } from '../ui/Card'
